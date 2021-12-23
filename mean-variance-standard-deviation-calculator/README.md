@@ -32,3 +32,21 @@ As per the assignment:
 - raise a `ValueError` exception with the message: "List must contain nine numbers." if the list contains less than 9 elements
 
 - return the metrics in lists, **not** NumPy arrays
+
+## Solution
+
+Concerning Python the script raises an exception with the [`raise`](https://docs.python.org/3/tutorial/errors.html#raising-exceptions) statement. As per the docs it is enough to specify the type of the error and the message displayed after the traceback.
+
+```py
+raise ValueError("List must contain nine numbers.")
+```
+
+The message is slightly confusing since code is executed only when there are less than nine numbers, but the assignment only asks to consider the specific condition.
+
+In terms of NumPy:
+
+- reshape the flat array into a 3 by 3 matrix with `.reshape(shape)`
+
+- convert NumPy arrays to Python lists with the `.tolist()` method
+
+  The function is relevant for the operations applied on the axis, since the return value is indeed a NumPy array.
