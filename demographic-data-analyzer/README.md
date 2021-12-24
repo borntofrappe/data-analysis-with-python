@@ -12,6 +12,8 @@ Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ic
 
 ## Assignment
 
+_Please note:_ to test the code locally I copied the first and last 200 observations from the actual dataset in `data.csv`. In the REPL the code is applied to the larger file.
+
 You are given a dataset of demographic data that was extracted from the 1994 Census database, considering such properties as age, work class, education, occupation and relationship.
 
 Use Pandas to answer the following questions:
