@@ -1,6 +1,6 @@
 # Data Analysis with Python
 
-Notes and solutions to earn the _[Data Analysis with Python](https://www.freecodecamp.org/learn/data-analysis-with-python)_ certification on the FreeCodeCamp curriculum.
+Notes and solutions to earn the _[Data Analysis with Python](https://www.freecodecamp.org/learn/data-analysis-with-python)_ certification on the freeCodeCamp curriculum.
 
 Run the scripts with Python.
 
@@ -20,6 +20,25 @@ _Please note:_ the scripts require additional Python libraries, specified on a n
 ```
 
 ## [Demographic Data Analyzer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer)
+
+```text
+Number of each race:
+White                 27816
+Black                  3124
+Asian-Pac-Islander     1039
+Amer-Indian-Eskimo      311
+Other                   271
+Name: race, dtype: int64
+Average age of men: 39.4
+Percentage with Bachelors degrees: 16.4%
+Percentage with higher education that earn >50K: 46.5%
+Percentage without higher education that earn >50K: 17.4%
+Min work time: 1 hours/week
+Percentage of rich among those who work fewest hours: 10.0%
+Country with highest percentage of rich: Iran
+Highest percentage of rich people in country: 41.9%
+Top occupations in India: Prof-specialty
+```
 
 ## [Medical Data Visualizer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/medical-data-visualizer)
 
