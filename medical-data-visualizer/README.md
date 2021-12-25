@@ -33,7 +33,7 @@ The rows in the dataset represent patients and the columns represent information
 
 Create two charts:
 
-- [a bar plot](https://replit.com/@freecodecamp/boilerplate-medical-data-visualizer#examples/Figure_1.png) to count the number of instances for several binary variables (for instance `active`, `alco`, `cholesterol`). Create two panels to differentiate the counts according to the `cardio` variable (`0` or `1`)
+- [a count plot](https://replit.com/@freecodecamp/boilerplate-medical-data-visualizer#examples/Figure_1.png) to count the number of instances for several binary variables (for instance `active`, `alco`, `cholesterol`). Create two panels to differentiate the counts according to the `cardio` variable (`0` or `1`)
 
 - [a correlation matrix](https://replit.com/@freecodecamp/boilerplate-medical-data-visualizer#examples/Figure_2.png) evaluating the relationship between several variables (for instance `age`, `gender`, `height`, `weight`)
 
@@ -49,7 +49,7 @@ In detail use the data to complete the following tasks:
 
   If the value of `cholesterol` or `gluc` is 1 make the value 0. If the value is more than 1 make the value 1.
 
-- convert the data into long format and create the bar plot with seaborn's `catplot()` function
+- convert the data into long format and create the count plot with seaborn's `catplot()` function
 
 - clean the data by filtering out the following patient segments, assumed to represent incorrect data:
 
