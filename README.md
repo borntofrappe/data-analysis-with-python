@@ -42,6 +42,10 @@ Top occupations in India: Prof-specialty
 
 ## [Medical Data Visualizer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/medical-data-visualizer)
 
+![Count plot](https://github.com/borntofrappe/data-analysis-with-python/blob/master/medical-data-visualizer/catplot.png)
+
+![Correlation matrix](https://github.com/borntofrappe/data-analysis-with-python/blob/master/medical-data-visualizer/heatmap.png)
+
 ## [Page View Time Series Visualizer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/page-view-time-series-visualizer)
 
 ## [Sea Level Predictor](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/sea-level-predictor)

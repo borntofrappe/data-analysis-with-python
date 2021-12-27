@@ -8,7 +8,7 @@ _Please note:_ to test the code locally I copied the first and last 200 observat
 
 - [Assignment](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/medical-data-visualizer)
 
-- [REPL](https://replit.com/@borntofrappe/boilerplate-medical-data-visualizer)
+- [Solution](https://replit.com/@borntofrappe/boilerplate-medical-data-visualizer)
 
 ## Data
 
@@ -33,23 +33,77 @@ The rows in the dataset represent patients and the columns represent information
 
 Create two charts:
 
-- [a count plot](https://replit.com/@freecodecamp/boilerplate-medical-data-visualizer#examples/Figure_1.png) to count the number of instances for several binary variables (for instance `active`, `alco`, `cholesterol`). Create two panels to differentiate the counts according to the `cardio` variable (`0` or `1`)
+- [a count plot](https://replit.com/@borntofrappe/boilerplate-medical-data-visualizer#examples/Figure_1.png) to count the number of instances for several binary variables (for instance `active`, `alco`, `cholesterol`). Create two panels to differentiate the counts according to the `cardio` variable (`0` or `1`)
 
-- [a correlation matrix](https://replit.com/@freecodecamp/boilerplate-medical-data-visualizer#examples/Figure_2.png) evaluating the relationship between several variables (for instance `age`, `gender`, `height`, `weight`)
+- [a correlation matrix](https://replit.com/@borntofrappe/boilerplate-medical-data-visualizer#examples/Figure_2.png) evaluating the relationship between several variables (for instance `age`, `gender`, `height`, `weight`)
 
-In detail use the data to complete the following tasks:
+## Solution
+
+For the dataset:
 
 - add an `overweight` column
 
-  To determine if a person is overweight first calculate their _BMI_ by dividing the weight in kilograms by the square of their height in meters. If the value exceeds 25 then the person is overweight.
+  To determine if a person is overweight first calculate their _BMI_ by dividing the weight in kilograms by the square of their height in meters.
 
-  Use the value 0 for **NOT** overweight and the value 1 for overweight
+  The height in the dataset is in centimeters, so that it is necessary to first change the unit of measure.
+
+  ```py
+  df['BMI'] = df['weight'] / (df['height'] / 100) ** 2
+  ```
+
+  If the value exceeds 25 then the person is overweight.
+
+  ```py
+  df['overweight'] = df['BMI'] > 25
+  ```
+
+  Use the value 0 for **NOT** overweight and the value 1 for overweight.
+
+  The previous snippet creates a series of boolean values where `True` describes the overweight status.
+
+  ```py
+  df['overweight'] = df['overweight'].replace({True: 1, False: 0})
+  ```
+
+  _Please note:_ the instructions in the script do not include the intermediate steps, and the series is added immediately to `df['overweight']`
 
 - normalize the data by making 0 always good and 1 always bad
 
   If the value of `cholesterol` or `gluc` is 1 make the value 0. If the value is more than 1 make the value 1.
 
+  `replace` would help to update the values, and the idea is to find values greater than 1 with a regular expression targeting values in the `[2-9]` range.
+
+  ```py
+  df[['cholesterol', 'gluc']].replace({1: 0, '[2-9]': 1}), regex=True)
+  ```
+
+  The problem with this approach is that regular expressions work on string values, not numerical ones. To work around this issue interpret the values as strings first.
+
+  ```py
+  df[['cholesterol', 'gluc']].astype(str).replace({'1': 0, '[2-9]': 1}), regex=True)
+  ```
+
+  Note that `1` is targeted as the character `'1'` since the column includes all string values.
+
+For the count plot (technically cat plot):
+
 - convert the data into long format and create the count plot with seaborn's `catplot()` function
+
+  The script suggests using `pd.melt`, and the solution is surprisingly straightforward.
+
+  ```py
+  df_cat = pd.melt(df, id_vars=['cardio'], value_vars=['active', 'alco', 'cholesterol', 'gluc', 'overweight', 'smoke'])
+  ```
+
+  The resulting dataframe creates 2400 rows where the values are repeated pending the `cardio` value.
+
+  ```
+
+  ```
+
+-
+
+For the correlation matrix (heatmap):
 
 - clean the data by filtering out the following patient segments, assumed to represent incorrect data:
 
@@ -64,5 +118,3 @@ In detail use the data to complete the following tasks:
   - weight is more than the 97.5th percentile
 
 - create the correlation matrix with seaborn's `heatmap()` function, making sure to mask the upper portion and show only the lower left triangle
-
-<!-- ## Solution -->

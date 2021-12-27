@@ -48,8 +48,8 @@ def draw_heat_map():
     corr = df_heat.corr()
 
     # Generate a mask for the upper triangle
-    mask = np.zeros_like(corr)
-    mask[np.triu_indices_from(mask)] = 1
+    mask = np.full_like(corr, False)
+    mask[np.triu_indices_from(mask)] = True
 
     # Set up the matplotlib figure
     fig, ax = plt.subplots(figsize=(9, 8))
