@@ -32,7 +32,7 @@ def draw_line_plot():
 
 def draw_bar_plot():
     # Copy and modify data for monthly bar plot
-    df_bar = df.copy(True)
+    df_bar = df.copy()
     df_bar = df_bar.resample('M').mean()
     df_bar['year'] = df_bar.index.year
     df_bar['month'] = df_bar.index.month
@@ -44,8 +44,9 @@ def draw_bar_plot():
     df_bar.plot.bar(ax=ax)
     ax.set_xlabel('Years')
     ax.set_ylabel('Average Page Views')
-    ax.legend(title='Months', labels=pd.date_range(
-        start='2020/01/01', periods=12, freq='M').month_name())
+    labels = pd.date_range(
+        start='2020/01/01', periods=12, freq='M').month_name()
+    ax.legend(title='Months', labels=labels)
 
     # Save image and return fig (don't change this part)
     fig.savefig('bar_plot.png')
@@ -64,13 +65,13 @@ def draw_box_plot():
     ax1, ax2 = axs
 
     sns.boxplot(data=df_box, x='year', y='value', ax=ax1)
-    sns.boxplot(data=df_box, x='month', y='value', ax=ax2, order=[d.strftime('%b') for d in pd.date_range(
-        start='2020/01/01', periods=12, freq='M')])
-
     ax1.set_title('Year-wise Box Plot (Trend)')
     ax1.set_xlabel('Year')
     ax1.set_ylabel('Page Views')
 
+    order = pd.date_range(start='2020/01/01', periods=12,
+                          freq='M').strftime('%b')
+    sns.boxplot(data=df_box, x='month', y='value', ax=ax2, order=order)
     ax2.set_title('Month-wise Box Plot (Seasonality)')
     ax2.set_xlabel('Month')
     ax2.set_ylabel('Page Views')
@@ -80,6 +81,6 @@ def draw_box_plot():
     return fig
 
 
-# draw_line_plot()
-# draw_bar_plot()
+draw_line_plot()
+draw_bar_plot()
 draw_box_plot()
