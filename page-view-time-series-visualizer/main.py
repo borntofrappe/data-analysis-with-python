@@ -18,7 +18,7 @@ df = df.drop(df[
 
 def draw_line_plot():
     # Draw line plot
-    fig, ax = plt.subplots(figsize=(16, 4))
+    fig, ax = plt.subplots(figsize=(20, 5))
 
     ax.set_title('Daily freeCodeCamp Forum Page Views 5/2016-12/2019')
     ax.set_xlabel('Date')
@@ -40,7 +40,7 @@ def draw_bar_plot():
     df_bar = df_bar.pivot('year', 'month', 'value')
 
     # Draw bar plot
-    fig, ax = plt.subplots(figsize=(7, 6))
+    fig, ax = plt.subplots(figsize=(9, 8))
     df_bar.plot.bar(ax=ax)
     ax.set_xlabel('Years')
     ax.set_ylabel('Average Page Views')
@@ -51,19 +51,35 @@ def draw_bar_plot():
     fig.savefig('bar_plot.png')
     return fig
 
-# def draw_box_plot():
-#     # Prepare data for box plots (this part is done!)
-#     df_box = df.copy()
-#     df_box.reset_index(inplace=True)
-#     df_box['year'] = [d.year for d in df_box.date]
-#     df_box['month'] = [d.strftime('%b') for d in df_box.date]
 
-#     # Draw box plots (using Seaborn)
+def draw_box_plot():
+    # Prepare data for box plots (this part is done!)
+    df_box = df.copy()
+    df_box.reset_index(inplace=True)
+    df_box['year'] = [d.year for d in df_box.date]
+    df_box['month'] = [d.strftime('%b') for d in df_box.date]
 
+    # Draw box plots (using Seaborn)
+    fig, axs = plt.subplots(1, 2, figsize=(30, 10))
+    ax1, ax2 = axs
 
-#     # Save image and return fig (don't change this part)
-#     fig.savefig('box_plot.png')
-#     return fig
+    sns.boxplot(data=df_box, x='year', y='value', ax=ax1)
+    sns.boxplot(data=df_box, x='month', y='value', ax=ax2, order=[d.strftime('%b') for d in pd.date_range(
+        start='2020/01/01', periods=12, freq='M')])
+
+    ax1.set_title('Year-wise Box Plot (Trend)')
+    ax1.set_xlabel('Year')
+    ax1.set_ylabel('Page Views')
+
+    ax2.set_title('Month-wise Box Plot (Seasonality)')
+    ax2.set_xlabel('Month')
+    ax2.set_ylabel('Page Views')
+
+    # Save image and return fig (don't change this part)
+    fig.savefig('box_plot.png')
+    return fig
+
 
 # draw_line_plot()
-draw_bar_plot()
+# draw_bar_plot()
+draw_box_plot()
