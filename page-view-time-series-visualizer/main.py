@@ -18,7 +18,7 @@ df = df.drop(df[
 
 def draw_line_plot():
     # Draw line plot
-    fig, ax = plt.subplots(figsize=(20, 5))
+    fig, ax = plt.subplots(figsize=(12, 3))
 
     ax.set_title('Daily freeCodeCamp Forum Page Views 5/2016-12/2019')
     ax.set_xlabel('Date')
@@ -40,7 +40,7 @@ def draw_bar_plot():
     df_bar = df_bar.pivot('year', 'month', 'value')
 
     # Draw bar plot
-    fig, ax = plt.subplots(figsize=(9, 8))
+    fig, ax = plt.subplots(figsize=(8, 7))
     df_bar.plot.bar(ax=ax)
     ax.set_xlabel('Years')
     ax.set_ylabel('Average Page Views')
@@ -61,7 +61,7 @@ def draw_box_plot():
     df_box['month'] = [d.strftime('%b') for d in df_box.date]
 
     # Draw box plots (using Seaborn)
-    fig, axs = plt.subplots(1, 2, figsize=(30, 10))
+    fig, axs = plt.subplots(1, 2, figsize=(22, 6))
     ax1, ax2 = axs
 
     sns.boxplot(data=df_box, x='year', y='value', ax=ax1)

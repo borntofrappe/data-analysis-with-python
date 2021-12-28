@@ -48,4 +48,10 @@ Top occupations in India: Prof-specialty
 
 ## [Page View Time Series Visualizer](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/page-view-time-series-visualizer)
 
+![Line plot](https://github.com/borntofrappe/data-analysis-with-python/blob/master/page-view-time-series-visualizer/line_plot.png)
+
+![Bar plot](https://github.com/borntofrappe/data-analysis-with-python/blob/master/page-view-time-series-visualizer/bar_plot.png)
+
+![Box plot](https://github.com/borntofrappe/data-analysis-with-python/blob/master/page-view-time-series-visualizer/box_plot.png)
+
 ## [Sea Level Predictor](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/sea-level-predictor)
