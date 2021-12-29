@@ -55,3 +55,5 @@ Top occupations in India: Prof-specialty
 ![Box plot](https://github.com/borntofrappe/data-analysis-with-python/blob/master/page-view-time-series-visualizer/box_plot.png)
 
 ## [Sea Level Predictor](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/sea-level-predictor)
+
+![Sea level plot](https://github.com/borntofrappe/data-analysis-with-python/blob/master/sea-level-predictor/sea_level_plot.png)
