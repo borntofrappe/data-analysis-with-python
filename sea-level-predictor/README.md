@@ -10,7 +10,7 @@ You will anaylize a dataset of the global average sea level change since 1880. Y
 
 - [Assignment](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/sea-level-predictor)
 
-- [REPL](https://replit.com/@borntofrappe/boilerplate-sea-level-predictor)
+- [Solution](https://replit.com/@borntofrappe/boilerplate-sea-level-predictor)
 
 ## Solution
 
@@ -25,3 +25,9 @@ You will anaylize a dataset of the global average sea level change since 1880. Y
 - The x label should be "Year", the y label should be "Sea Level (inches)", and the title should be "Rise in Sea Level".
 
 Unit tests are written for you under `test_module.py`.
+
+```py
+xs = [df['Year'][0], 2050]
+ys = [intercept + slope * x for x in xs]
+plt.plot(xs, ys)
+```
