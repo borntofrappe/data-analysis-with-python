@@ -1,26 +1,26 @@
 # Sea Level Predictor
 
-You will anaylize a dataset of the global average sea level change since 1880. You will use the data to predict the sea level change through year 2050.
-
-## Dataset source
-
-[Global Average Absolute Sea Level Change](https://datahub.io/core/sea-level-rise), 1880-2014 from the US Environmental Protection Agency using data from CSIRO, 2015; NOAA, 2015.
-
-_Please note:_ to test the code locally I copied the data `data.csv`. In the online REPL the code is applied to the larger file.
-
-_Please note:_ the online REPL includes an additional line of code in the `draw_plot` function.
-
-```py
-plt.clf()
-```
-
-The instruction is necessary to avoid overlapping plot in the `.png` image, caused by calling the function repeatedly (the testing module has four tests, each calling the function) and by relying on the global matplotlib API.
+Anaylyse a dataset of the global average sea level change since 1880. and predict the sea level change through the year 2050.
 
 ## Links
 
 - [Assignment](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/sea-level-predictor)
 
 - [Solution](https://replit.com/@borntofrappe/boilerplate-sea-level-predictor)
+
+_Please note:_ the online REPL includes an additional line of code in the body of the `draw_plot` function.
+
+```py
+plt.clf()
+```
+
+The instruction is necessary to avoid overlapping plots, caused by calling the function repeatedly (the testing module has four tests, each calling the function once) and by relying on the global matplotlib API.
+
+## Data
+
+[Global Average Absolute Sea Level Change](https://datahub.io/core/sea-level-rise), 1880-2014 from the US Environmental Protection Agency using data from CSIRO, 2015; NOAA, 2015.
+
+_Please note:_ to test the code locally I copied the data in `epa-sea-level.csv`.
 
 ## Solution
 

@@ -1,20 +1,20 @@
 # Mean-Variance-Standard Deviation Calculator
 
+Compute the mean, variance, standard deviation and other calculations for a 3 by 3 matrix.
+
 ## Links
 
 - [Assignment](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/mean-variance-standard-deviation-calculator)
 
 - [Solution](https://replit.com/@borntofrappe/boilerplate-mean-variance-standard-deviation-calculator)
 
-## Preface
+## Solution
 
-The assignment asks to create a `calculate()` function which uses Numpy to display the mean, variance, standard deviation, max, min, and sum of the rows, columns, and elements in a 3 x 3 matrix.
+The assignment asks to create a `calculate()` function which uses Numpy to display the different operations.
 
-**Input**: a list of 9 digits
+The function receives as input a list of 9 digits, and returns a dictionary with the desired metrics.
 
-**Output**: a dictionary with the desired metrics
-
-The list of 9 digits is first converted to a 3 by 3 array, so that the dictionary should include three values for each metric, for both axes and for all elements together.
+The list of 9 digits is first converted to a 3 by 3 array, so that the dictionary includes three values for each metric, for both axes and for all elements together.
 
 ```py
 {
@@ -27,26 +27,50 @@ The list of 9 digits is first converted to a 3 by 3 array, so that the dictionar
 }
 ```
 
-As per the assignment:
-
-- raise a `ValueError` exception with the message: "List must contain nine numbers." if the list contains less than 9 elements
-
-- return the metrics in lists, **not** NumPy arrays
-
-## Solution
-
-Concerning Python the script raises an exception with the [`raise`](https://docs.python.org/3/tutorial/errors.html#raising-exceptions) statement. As per the docs it is enough to specify the type of the error and the message displayed after the traceback.
+Immediately the assignment asks to raise an exception when the input list contains less than 9 elements. This feat is achieved with Python and the `raise` statement.
 
 ```py
-raise ValueError("List must contain nine numbers.")
+if len(list) < 9:
+    raise ValueError("List must contain nine numbers.")
 ```
 
-The message is slightly confusing since code is executed only when there are less than nine numbers, but the assignment only asks to consider the specific condition.
+Past the exception
 
-In terms of NumPy:
+- reshape the list into a 3 by 3 matrix
 
-- reshape the flat array into a 3 by 3 matrix with `.reshape(shape)`
+  ```py
+  a = np.array(list).reshape(3, 3)
+  ```
 
-- convert NumPy arrays to Python lists with the `.tolist()` method
+- compute the mean, variance and other relevant metrics with the associated functions. For instance and for the mean
 
-  The function is relevant for the operations applied on the axis, since the return value is indeed a NumPy array.
+  ```py
+  np.mean(a)
+  ```
+
+  Without additional arguments NumPy considers all the elements. Per the assignment, the `axis` argument allows to compute the value relative to the columns or rows.
+
+  ```py
+  np.mean(a, axis=0)
+  np.mean(a, axis=1)
+  ```
+
+  For each metric the three values are stored in a list.
+
+  ```py
+  mean = [
+        np.mean(a, axis=0),
+        np.mean(a, axis=1),
+        np.mean(a)
+    ]
+  ```
+
+  Per the assignment, however, convert the computations for the two axis from the value returned by NumPy, which is a numpy array. The assignment explictly ask to store the data in python lits.
+
+  ```py
+  mean = [
+        np.mean(a, axis=0).tolist(),
+        np.mean(a, axis=1).tolist(),
+        np.mean(a)
+    ]
+  ```

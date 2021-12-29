@@ -1,8 +1,10 @@
 # Medical Data Visualizer
 
-Visualize and make calculations from medical examination data with matplotlib, seaborn, and pandas.
+Analyse and visualize medical data with two charts:
 
-_Please note:_ to test the code locally I copied the first and last 200 observations of the entire dataset in `medical_examination.csv`.
+- [a count plot](https://replit.com/@borntofrappe/boilerplate-medical-data-visualizer#examples/Figure_1.png) to count the number of instances for several binary variables (for instance `active`, `alco`, `cholesterol`), splitting the count according to the value of a defining metric (`cardio`)
+
+- [a correlation matrix](https://replit.com/@borntofrappe/boilerplate-medical-data-visualizer#examples/Figure_2.png) to evaluate the relationship between several variables (for instance `age`, `gender`, `height`, `weight`)
 
 ## Links
 
@@ -11,6 +13,10 @@ _Please note:_ to test the code locally I copied the first and last 200 observat
 - [Solution](https://replit.com/@borntofrappe/boilerplate-medical-data-visualizer)
 
 ## Data
+
+Provided in the assignment.
+
+_Please note:_ to test the code locally I copied the first and last 200 observations of the entire dataset in `medical_examination.csv`.
 
 The rows in the dataset represent patients and the columns represent information like body measurements, results from various blood tests, and lifestyle choices.
 
@@ -28,14 +34,6 @@ The rows in the dataset represent patients and the columns represent information
 |                Alcohol intake                 | Subjective Feature  |    alco     |                      binary                      |
 |               Physical activity               | Subjective Feature  |   active    |                      binary                      |
 | Presence or absence of cardiovascular disease |   Target Variable   |   cardio    |                      binary                      |
-
-## Assignment
-
-Create two charts:
-
-- [a count plot](https://replit.com/@borntofrappe/boilerplate-medical-data-visualizer#examples/Figure_1.png) to count the number of instances for several binary variables (for instance `active`, `alco`, `cholesterol`). Create two panels to differentiate the counts according to the `cardio` variable (`0` or `1`)
-
-- [a correlation matrix](https://replit.com/@borntofrappe/boilerplate-medical-data-visualizer#examples/Figure_2.png) evaluating the relationship between several variables (for instance `age`, `gender`, `height`, `weight`)
 
 ## Solution
 

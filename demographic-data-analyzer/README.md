@@ -1,24 +1,18 @@
 # Demographic Data Analyzer
 
+Analyse a dataset of demographic data extracted from the 1994 Census database, considering such properties as age, work class, education, occupation and relationship.
+
 ## Links
 
 - [Assignment](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer)
 
 - [Solution](https://replit.com/@borntofrappe/boilerplate-demographic-data-analyzer)
 
-## Dataset source
+## Data
 
-Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
+Dua, D. and Graff, C. (2019). [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml). Irvine, CA: University of California, School of Information and Computer Science.
 
-## Assignment
-
-You are given a dataset of demographic data that was extracted from the 1994 Census database, considering such properties as age, work class, education, occupation and relationship.
-
-Update the `calculate_demographic_data` function so that all variables set to "None" are set to the appropriate calculation or code.
-
-Round all decimals to the nearest tenth.
-
-_Please note:_ to test the code locally I copied the first and last 200 observations from the actual dataset in `data.csv`. In the online REPL the code is applied to the larger file.
+_Please note:_ to test the code locally I copied the first and last 200 observations of the entire dataset in `adult.data.csv`.
 
 ## Solution
 

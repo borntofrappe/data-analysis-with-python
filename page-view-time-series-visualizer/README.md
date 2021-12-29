@@ -1,14 +1,18 @@
 # Page View Time Series Visualizer
 
-Visualize time series using a line chart, a bar chart, and box plots. You will use Pandas, Matplotlib, and Seaborn to visualize a dataset containing the number of page views each day on the freeCodeCamp.org forum from 2016-05-09 to 2019-12-03.
-
-_Please note:_ to test the code locally I copied the data in `fcc-forum-pageviews.csv`.
+Visualize a dataset containing the number of page views ìon the freeCodeCamp.org forum with a line chart, a bar chart, and box plots.
 
 ## Links
 
 - [Assignment](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/page-view-time-series-visualizer)
 
 - [Solution](https://replit.com/@borntofrappe/boilerplate-page-view-time-series-visualizer)
+
+## Data
+
+Provided in the assignment.
+
+_Please note:_ to test the code locally I copied the data in `fcc-forum-pageviews.csv`.
 
 ## Solution
 
